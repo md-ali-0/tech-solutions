@@ -14,7 +14,7 @@ const Navbar = () => {
     const pathName = usePathname();
 
     return (
-        <header className="absolute w-full">
+        <header className="absolute w-full z-50">
             <div className="relative">
                 <Container>
                     <nav className="flex justify-between items-center py-7 lg:px-0 px-6">
@@ -105,13 +105,13 @@ const Navbar = () => {
                             <LuX size={30} className="text-white" />
                         </button>
                     </div>
-                    <div className="flex items-center">
-                        <ul className="flex flex-col gap-3 py-10 px-6 *:text-[#D4E5F6]">
+                    <div className="flex items-center pb-10">
+                        <ul className="flex flex-col gap-5 py-10 px-6 *:text-[#D4E5F6]">
                             <li>
                                 <Link
                                     href={"/"}
                                     className={
-                                        pathName == "/" ? "active py-3" : "py-3"
+                                        pathName == "/" ? "active py-2" : "py-3"
                                     }
                                 >
                                     Home
@@ -122,7 +122,7 @@ const Navbar = () => {
                                     href={"/about-us"}
                                     className={
                                         pathName == "/about-us"
-                                            ? "active py-3"
+                                            ? "active py-2"
                                             : "py-3"
                                     }
                                 >
@@ -134,7 +134,7 @@ const Navbar = () => {
                                     href={"/our-service"}
                                     className={
                                         pathName == "/our-service"
-                                            ? "active py-3"
+                                            ? "active py-2"
                                             : "py-3"
                                     }
                                 >
@@ -146,7 +146,7 @@ const Navbar = () => {
                                     href={"/faq"}
                                     className={
                                         pathName == "/faq"
-                                            ? "active py-3"
+                                            ? "active py-2"
                                             : "py-3"
                                     }
                                 >
@@ -155,7 +155,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className="px-6">
+                    <div className="self-end px-6">
                         <button className="bg-[#3757F5] text-white text-[18px] font-semibold focus-visible:ring-indigo-600 focus-visible:ring-offset-2 active:scale-95 w-full rounded-xl px-5 py-3">
                             Contact Us
                         </button>
