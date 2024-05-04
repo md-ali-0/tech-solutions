@@ -71,7 +71,8 @@ const Navbar = () => {
                                 </div>
                                 <span className="pr-6">+44 7441 398272</span>
                             </button>
-                            <button className="flex  items-center bg-primary py-[6px] gap-2">
+                          <Link href={"/contact"}>
+                          <button className="flex  items-center bg-primary py-[6px] gap-2">
                                 <span className="pl-6">Contact Us</span>
                                 <div className="inline-flex justify-center items-center bg-white rounded-full text-primary w-8 h-8 mr-2">
                                     <LuArrowUpRight
@@ -79,7 +80,7 @@ const Navbar = () => {
                                         size={20}
                                     />
                                 </div>
-                            </button>
+                            </button></Link>
                         </div>
                     </nav>
                 </Container>
