@@ -7,7 +7,7 @@ import { FaPlay, FaStarOfLife } from "react-icons/fa";
 import { LuArrowUpRight } from "react-icons/lu";
 
 const Banner = () => {
-    console.log(bannerImage);
+    
     return (
         <section
             className="bg-cover bg-center overflow-hidden"

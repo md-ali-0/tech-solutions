@@ -6,49 +6,50 @@ import { useState } from "react";
 import { GoPlus } from "react-icons/go";
 import { PiMinusThin } from "react-icons/pi";
 
-const FaqItem = () => {
-    const [faqOpen, setFaqOpen] = useState(false);
+const FaqItem = ({ faq, idx, isActive, setIsActive }) => {
+    const handleToggle = () => {
+        setIsActive(idx);
+    };
     return (
         <li
-            class={`border rounded-xl my-2 px-8 py-6 ${
-                faqOpen ? "bg-primary text-white" : "text-[#153658]"
+            className={`border rounded-xl my-2 px-8 py-6 ${
+                isActive == idx
+                    ? "bg-primary text-white"
+                    : "text-[#153658]"
             }`}
-            onClick={() => setFaqOpen(!faqOpen)}
+            onClick={handleToggle}
         >
-            <h2 class="flex flex-row justify-between items-center text-[20px] font-semibold py-3 cursor-pointer">
-                <span>
-                    01 How do your Al solutions improve customer service?
-                </span>
-                {!faqOpen ? <GoPlus /> : <PiMinusThin />}
+            <h2 className="flex flex-row justify-between items-center text-[20px] font-semibold py-3 cursor-pointer">
+                <span>{`${idx + 1} ${faq.question}`}</span>
+                {isActive == idx ? <PiMinusThin /> : <GoPlus />}
             </h2>
             <div
                 x-ref="tab"
-                class={`border-l-2 border-primary overflow-hidden max-h-0 duration-500 transition-all ${
-                    faqOpen ? "max-h-[80px]" : ""
+                className={`border-l-2 border-primary overflow-hidden max-h-0 duration-500 transition-all ${
+                    isActive == idx ? "max-h-[80px]" : ""
                 }`}
             >
-                <p class="p-3">
-                    Shipping time is set by our delivery partners, according to
-                    the delivery method chosen by you. Additional details can be
-                    found in the order confirmation
-                </p>
+                <p className="p-3">{faq.answer}</p>
             </div>
         </li>
     );
 };
 
 const FAQ = () => {
-    const faq = [
+    const [isActive, setIsActive] = useState(1);
+    const faqs = [
         {
             question: "How do your Al solutions improve customer service?",
             answer: "Yes, we specialize in creating AI and chatbot solutions that are tailored to the unique requirements and challenges of different industries.",
         },
         {
-            question: "Are your Al and chatbot solutions customizable to specific industries?",
+            question:
+                "Are your Al and chatbot solutions customizable to specific industries?",
             answer: "Yes, we specialize in creating AI and chatbot solutions that are tailored to the unique requirements and challenges of different industries.",
         },
         {
-            question: "How do you measure the success of a digital marketing campaign?",
+            question:
+                "How do you measure the success of a digital marketing campaign?",
             answer: "Yes, we specialize in creating AI and chatbot solutions that are tailored to the unique requirements and challenges of different industries.",
         },
         {
@@ -95,11 +96,22 @@ const FAQ = () => {
                         </h3>
                     </div>
                 </div>
-                <div class="flex justify-center items-start my-2">
-                    <div class="w-full sm:w-10/12 md:w-1/2 my-1">
-                        <ul class="flex flex-col"></ul>
+                <div className="flex justify-center items-start my-2">
+                    <div className="w-full sm:w-10/12 md:w-1/2 my-1">
+                        <ul className="flex flex-col">
+                            {faqs.map((faq, idx) => (
+                                <FaqItem
+                                    key={idx}
+                                    faq={faq}
+                                    idx={idx}
+                                    isActive={isActive}
+                                    setIsActive={setIsActive}
+                                />
+                            ))}
+                        </ul>
                     </div>
                 </div>
+                <div className="h-[100px]"></div>
             </Container>
         </div>
     );

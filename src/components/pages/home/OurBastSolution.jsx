@@ -9,7 +9,7 @@ import Image from "next/image";
 import { LuArrowUpRight } from "react-icons/lu";
 
 const OurBastSolution = () => {
-    console.log(bestSolutionImage);
+    
     return (
         <div
             className="bg-secondary bg-cover bg-center rounded-t-3xl py-5 lg:py-10"
