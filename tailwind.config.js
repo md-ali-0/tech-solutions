@@ -10,6 +10,7 @@ module.exports = {
       fontFamily: {
         "DMSerif": ['DM Serif Display', 'sans-serif'],
         "Montserrat": ['Montserrat', 'sans-serif'],
+        "Inter": ['Inter', 'sans-serif'],
       },
       colors: {
         "primary": "#3280CF",

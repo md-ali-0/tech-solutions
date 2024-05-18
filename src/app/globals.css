@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -23,5 +24,23 @@ body {
 @layer utilities {
     .text-balance {
         text-wrap: balance;
+    }
+    .footer-top-bg {
+        background-position-x: -10px;
+    }
+
+    @media (max-width: 768px) {
+        .footer-top-bg {
+            background-position-x: 0px;
+        }
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
     }
 }

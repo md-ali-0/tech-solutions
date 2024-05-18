@@ -19,9 +19,9 @@ const FaqItem = ({ faq, idx, isActive, setIsActive }) => {
             }`}
             onClick={handleToggle}
         >
-            <h2 className="flex flex-row justify-between items-center text-[20px] font-semibold py-3 cursor-pointer">
+            <h2 className="flex flex-row justify-between items-center text-base lg:text-[20px] font-semibold py-3 cursor-pointer">
                 <span>{`${idx + 1} ${faq.question}`}</span>
-                {isActive == idx ? <PiMinusThin /> : <GoPlus />}
+                {isActive == idx ? <PiMinusThin size={25} /> : <GoPlus size={25} />}
             </h2>
             <div
                 x-ref="tab"
@@ -62,27 +62,27 @@ const FAQ = () => {
         },
     ];
     return (
-        <div className="bg-[#F5F9FD]">
+        <div className="bg-[#F5F9FD] px-6 lg:px-0">
             <Container>
                 <div className="h-[100px]"></div>
-                <div className="px-6">
+                <div data-aos="fade-up" className="px-6">
                     <div className="w-fit mx-auto">
                         <div className="flex justify-center gap-3">
                             <div className="bg-primary h-[1px] w-[69px] mt-2"></div>
-                            <h3 className="font-medium text-[#153658] text-xs md:text-base">
+                            <h3 className="font-medium text-[#153658] text-sm sm:text-lg font-Inter lg:text-base">
                                 Our FAQS
                             </h3>
                         </div>
                         <div className="flex flex-col justify-center items-center md:flex-row md:w-fit md:gap-3">
-                            <h3 className="text-[26px] text-[#1D1F2C] md:text-[48px] font-bold">
+                            <h3 className="text-2xl text-[#1D1F2C] sm:text-3xl lg:text-[48px] font-bold">
                                 Frequently Asked
                             </h3>
                             <div>
-                                <h3 className="text-primary text-[32px] md:text-[56px] font-DMSerif italic">
+                            <h3 className="text-primary text-[32px] sm:text-[40px] lg:text-[56px] font-DMSerif italic">
                                     Questions
                                 </h3>
                                 <Image
-                                    className="mx-auto mt-1 w-[150px] md:w-auto"
+                                    className="mx-auto mt-1 w-full lg:w-auto"
                                     src={subTitleBGImage.src}
                                     alt=""
                                     width={300}
@@ -96,8 +96,8 @@ const FAQ = () => {
                         </h3>
                     </div>
                 </div>
-                <div className="flex justify-center items-start my-2">
-                    <div className="w-full sm:w-10/12 md:w-1/2 my-1">
+                <div data-aos="fade-down" className="flex justify-center items-start my-2">
+                    <div className="w-full sm:w-10/12 lg:w-1/2 my-1">
                         <ul className="flex flex-col">
                             {faqs.map((faq, idx) => (
                                 <FaqItem

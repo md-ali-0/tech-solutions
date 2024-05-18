@@ -69,9 +69,12 @@ const Navbar = () => {
                                 <div className="inline-flex justify-center items-center bg-white rounded-full text-primary w-8 h-8 ml-2">
                                     <LuPhoneCall className="inline" size={20} />
                                 </div>
-                                <span className="pr-6">+44 7441 398272</span>
+                                <span className="pr-6"><Link href={"tel:+44 7441 398272"}>+44 7441 398272</Link></span>
                             </button>
-                            <button className="flex  items-center bg-primary py-[6px] gap-2">
+                            <Link
+                                href={"/contact-us"}
+                                className="flex  items-center bg-primary py-[6px] gap-2"
+                            >
                                 <span className="pl-6">Contact Us</span>
                                 <div className="inline-flex justify-center items-center bg-white rounded-full text-primary w-8 h-8 mr-2">
                                     <LuArrowUpRight
@@ -79,7 +82,7 @@ const Navbar = () => {
                                         size={20}
                                     />
                                 </div>
-                            </button>
+                            </Link>
                         </div>
                     </nav>
                 </Container>
@@ -113,6 +116,7 @@ const Navbar = () => {
                                     className={
                                         pathName == "/" ? "active py-2" : "py-3"
                                     }
+                                    onClick={() => setMenuIsOpen(false)}
                                 >
                                     Home
                                 </Link>
@@ -125,6 +129,7 @@ const Navbar = () => {
                                             ? "active py-2"
                                             : "py-3"
                                     }
+                                    onClick={() => setMenuIsOpen(false)}
                                 >
                                     About Us
                                 </Link>
@@ -137,6 +142,7 @@ const Navbar = () => {
                                             ? "active py-2"
                                             : "py-3"
                                     }
+                                    onClick={() => setMenuIsOpen(false)}
                                 >
                                     Our Service
                                 </Link>
@@ -149,6 +155,7 @@ const Navbar = () => {
                                             ? "active py-2"
                                             : "py-3"
                                     }
+                                    onClick={() => setMenuIsOpen(false)}
                                 >
                                     FAQ
                                 </Link>
@@ -156,9 +163,14 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="self-end px-6">
-                        <button className="bg-[#3757F5] text-white text-[18px] font-semibold focus-visible:ring-indigo-600 focus-visible:ring-offset-2 active:scale-95 w-full rounded-xl px-5 py-3">
-                            Contact Us
-                        </button>
+                        <Link
+                            href={"/contact-us"}
+                            onClick={() => setMenuIsOpen(false)}
+                        >
+                            <button className="bg-[#3757F5] text-white text-[18px] font-semibold focus-visible:ring-primary focus-visible:ring-offset-2 active:scale-95 w-full rounded-xl px-5 py-3">
+                                Contact Us
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
